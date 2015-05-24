@@ -14,6 +14,7 @@ namespace PinValidation
             string gender = Console.ReadLine();
             string egn = Console.ReadLine();
 
+
             int[] egnDigits = new int[egn.Length];
             bool isEgnMadeOfDigits = true;
             for (int i = 0; i < egn.Length; i++)
@@ -56,9 +57,8 @@ namespace PinValidation
             DateTime date = new DateTime();
             bool isDateCorrect = DateTime.TryParse(String.Format("{0}.{1}.{2}", day, month, year), out date);
 
-            int checkSum = (egnDigits[0] * 2 + egnDigits[1] * 4 + egnDigits[2] * 8 
-                            + egnDigits[3] * 5 + egnDigits[4] * 10 + egnDigits[5] * 9
-                            + egnDigits[6] * 7 + egnDigits[7] * 3 + egnDigits[8] * 6) % 11;
+            int checkSum = (egnDigits[0] * 2 + egnDigits[1] * 4 + egnDigits[2] * 8 + egnDigits[3] * 5 + egnDigits[4] * 10 + egnDigits[5] * 9
+                + egnDigits[6] * 7 + egnDigits[7] * 3 + egnDigits[8] * 6) % 11;
             if (checkSum == 10)
             {
                 checkSum = 0;
